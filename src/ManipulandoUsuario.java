@@ -1,21 +1,13 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Predicate;
 
 public class ManipulandoUsuario {
 
     public static void main(String[] args) {
 
-        Usuario frans = new Usuario("Frans", 3, true);
-        Usuario silvestre = new Usuario("Silvestre", 1, true);
-        Usuario arnold = new Usuario("Arnold", 2, true);
-
-        Predicate<Usuario> predicado = new Predicate<Usuario>() {
-            public boolean test(Usuario u) {
-                return u.getNome().equals("Frans");
-            }
-        };
+        Usuario frans = new Usuario("Paulo Silveira", 150);
+        Usuario silvestre = new Usuario("Rodrigo Turini", 120);
+        Usuario arnold = new Usuario("Guilherme Silveira", 90);
 
         List<Usuario> usuarios = new ArrayList();
 
@@ -23,11 +15,20 @@ public class ManipulandoUsuario {
         usuarios.add(silvestre);
         usuarios.add(arnold);
 
-        usuarios.removeIf(predicado);
+        usuarios
+                .stream()
+                .filter(u -> u.getPontos() >= 90)
+                .forEach(System.out::println);
+
+//        usuarios.sort(Comparator.comparing(Usuario::getPontos).reversed());
+//        usuarios.stream().filter(usuario -> usuario.getPontos() > 100);
+//        usuarios.forEach(System.out::println);
+//        usuarios.subList(0, 2).forEach(Usuario::tornaModerador);
+//        usuarios.removeIf(predicado);
 //        usuarios.forEach(usuario -> System.out.println(usuario.getNome()));
 //        usuarios.sort(Comparator.comparing(Usuario::getNome));
-        usuarios.sort(Comparator.comparing(Usuario::getPontos).reversed());
-        usuarios.forEach(usuario -> System.out.println(usuario.getNome()));
+//        usuarios.sort(Comparator.comparing(Usuario::getPontos).reversed());
+//        usuarios.forEach(usuario -> System.out.println(usuario.getNome()));
 //        usuarios.sort(Comparator.nullsLast(Comparator.comparing(Usuario::getNome)));
 
 
