@@ -1,12 +1,12 @@
-import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ManipulandoUsuario {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         Usuario frans = new Usuario("Paulo Silveira", 150, true);
         Usuario silvestre = new Usuario("Rodrigo Turini", 120, true);
@@ -35,25 +35,30 @@ public class ManipulandoUsuario {
 //                .collect(Collectors.groupingBy(Usuario::getPontos));
 //        System.out.println(pontuacao);
 
+//        Map<Boolean, List<Usuario>> moderadores = listUsers
+//                .stream()
+//                .collect(Collectors.partitioningBy(Usuario::isModerador));
+//
+//        Map<Boolean, List<String>> nomesPorTipo = listUsers
+//                .stream()
+//                .collect(Collectors.partitioningBy(Usuario::isModerador, Collectors.mapping(Usuario::getNome, Collectors.toList())));
+//        System.out.println(nomesPorTipo);
+//
+//        Map<Boolean, Integer> pontuacaoPorTipo = listUsers
+//                .stream()
+//                .collect(Collectors.partitioningBy(Usuario::isModerador, Collectors.summingInt(Usuario::getPontos)));
+//        System.out.println(pontuacaoPorTipo);
+
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        Map<Boolean, List<Usuario>> moderadores = listUsers
-                .stream()
-                .collect(Collectors.partitioningBy(Usuario::isModerador));
+        List<Usuario> filtradosOrdenados = listUsers.parallelStream()
+                .filter(u -> u.getPontos() > 100)
+                .sorted(Comparator.comparing(Usuario::getNome))
+                .collect(Collectors.toList());
 
-        Map<Boolean, List<String>> nomesPorTipo = listUsers
-                .stream()
-                .collect(Collectors.partitioningBy(Usuario::isModerador, Collectors.mapping(Usuario::getNome, Collectors.toList())));
+        System.out.println(filtradosOrdenados);
 
-        System.out.println(nomesPorTipo);
-
-        Map<Boolean, Integer> pontuacaoPorTipo = listUsers
-                .stream()
-                .collect(
-                        Collectors.partitioningBy(
-                                Usuario::isModerador,
-                                Collectors.summingInt(Usuario::getPontos)));
-        System.out.println(pontuacaoPorTipo);
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
 //        Files.list(Paths.get("MacBook-Pro-de-Francisli:Apostilas/Java_8_Pratico_Lambdas_Streams_e_os_Novos_Recursos_da_Linguagem_-_Casa_do_Codigo"))
 //                .filter(path -> path.toString().endsWith(".pdf"))
