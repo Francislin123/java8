@@ -1,8 +1,7 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class ManipulandoUsuario {
 
@@ -49,14 +48,20 @@ public class ManipulandoUsuario {
 //                .collect(Collectors.partitioningBy(Usuario::isModerador, Collectors.summingInt(Usuario::getPontos)));
 //        System.out.println(pontuacaoPorTipo);
 
+//        List<Usuario> filtradosOrdenados = listUsers.parallelStream()
+//                .filter(u -> u.getPontos() > 100)
+//                .sorted(Comparator.comparing(Usuario::getNome))
+//                .collect(Collectors.toList());
+//
+//        System.out.println(filtradosOrdenados);
+
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        List<Usuario> filtradosOrdenados = listUsers.parallelStream()
-                .filter(u -> u.getPontos() > 100)
-                .sorted(Comparator.comparing(Usuario::getNome))
-                .collect(Collectors.toList());
+        LocalDate date = LocalDate.of(2014, 12, 25);
+        LocalDateTime dateTime = LocalDateTime.of(2014, 12, 25, 10, 30);
 
-        System.out.println(filtradosOrdenados);
+        System.out.println(date);
+        System.out.println(dateTime);
 
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
