@@ -1,5 +1,6 @@
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
 
@@ -57,11 +58,27 @@ public class ManipulandoUsuario {
 
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
-        LocalDate date = LocalDate.of(2014, 12, 25);
-        LocalDateTime dateTime = LocalDateTime.of(2014, 12, 25, 10, 30);
+//        LocalDate date = LocalDate.of(2014, 12, 25);
+//        LocalDateTime dateTime = LocalDateTime.of(2014, 12, 25, 10, 30);
+//
+//        System.out.println(date);
+//        System.out.println(dateTime);
+//
+//        ZonedDateTime tokyo = ZonedDateTime.of(2020, 1, 18, 15, 50, 0, 0, ZoneId.of("Asia/Tokyo"));
+//        ZonedDateTime saoPaulo = ZonedDateTime.of(2020, 1, 18, 15, 50, 0, 0, ZoneId.of("America/Sao_Paulo"));
+//
+////        ZonedDateTime tokyo = ZonedDateTime.of(2011, 5, 2, 10, 30, 0, 0, ZoneId.of("Asia/Tokyo"));
+////        ZonedDateTime saoPaulo = ZonedDateTime.of(2011, 5, 2, 10, 30, 0, 0, ZoneId.of("America/Sao_Paulo"));
+//
+//        tokyo = tokyo.plusHours(12);
+//
+//        System.out.println(tokyo.isEqual(saoPaulo));
 
-        System.out.println(date);
-        System.out.println(dateTime);
+        LocalDate agora = LocalDate.now();
+        LocalDate outraData = LocalDate.of(1989, Month.JANUARY, 25);
+        long dias = ChronoUnit.DAYS.between(outraData, agora);
+
+        System.out.println("Dias de diferença: " + dias);
 
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
