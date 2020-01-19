@@ -1,5 +1,4 @@
-import java.time.LocalDate;
-import java.time.Month;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
@@ -79,6 +78,26 @@ public class ManipulandoUsuario {
         long dias = ChronoUnit.DAYS.between(outraData, agora);
 
         System.out.println("Dias de diferença: " + dias);
+
+        LocalDate now = LocalDate.now();
+        LocalDate outraDate = LocalDate.of(2015, Month.JANUARY, 25);
+        Period periodo = Period.between(outraDate, now);
+        System.out.printf("%s dias, %s meses e %s anos", periodo.getDays(), periodo.getMonths(), periodo.getYears());
+
+        if (periodo.isNegative()) {
+            periodo = periodo.negated();
+        }
+
+        System.out.printf("%s dias, %s meses e %s anos", periodo.getDays(), periodo.getMonths(), periodo.getYears());
+
+        LocalDateTime nowDate = LocalDateTime.now();
+        LocalDateTime daquiAUmaHora = LocalDateTime.now().plusHours(1);
+        Duration duration = Duration.between(nowDate, daquiAUmaHora);
+        if (duration.isNegative()) {
+            duration = duration.negated();
+        }
+
+        System.out.printf("%s horas, %s minutos e %s segundos", duration.toHours(), duration.toMinutes(), duration.getSeconds());
 
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 

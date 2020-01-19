@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ManipulandoUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="79" column="31" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
+            <state relative-caret-position="250">
+              <caret line="99" column="129" selection-start-line="99" selection-start-column="129" selection-end-line="99" selection-end-column="129" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,7 +173,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5714286" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5133438" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.33124018" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -251,7 +251,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ManipulandoUsuario.java</url>
-          <line>115</line>
+          <line>135</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -369,8 +369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ManipulandoUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="79" column="31" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
+        <state relative-caret-position="250">
+          <caret line="99" column="129" selection-start-line="99" selection-start-column="129" selection-end-line="99" selection-end-column="129" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
